@@ -277,6 +277,17 @@ footer img{width:52px;height:52px;border-radius:14px;margin:0 auto 12px}footer p
 @media(max-width:900px){.rc.res.wide{grid-template-columns:auto 1fr}.rchips{grid-column:1/-1;display:flex;flex-wrap:wrap}}
 @media(max-width:600px){.rc.res.wide{grid-template-columns:1fr;gap:14px}}
 .fd input,.fd select{padding-left:42px}
+
+.tw{align-items:flex-start;margin-top:84px}
+.t{padding:66px 28px 30px}
+.t:nth-child(4){margin-top:0}.t:nth-child(5){margin-top:46px}.t:nth-child(6){--r:50px 34px 120px 34px;--c:var(--aqua);animation-delay:-5s}
+.av{width:88px;height:88px;top:-44px;left:24px;overflow:hidden;font-size:1.7rem}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.t .m{line-height:1.45}
+.q{margin:0;font-size:.94rem;line-height:1.6}
+.q.clamp{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.more{margin-top:10px;background:none;border:0;padding:0;font:700 .85rem var(--b);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media(max-width:700px){.t:nth-child(n){margin-top:0}}
 </style>
 </head>
 <body>
@@ -349,7 +360,6 @@ footer img{width:52px;height:52px;border-radius:14px;margin:0 auto 12px}footer p
     <div class="center rv"><span class="eyebrow">Student stories</span><h2>Results that <b class="g">speak for themselves</b></h2>
       <p class="sub">What our past students and their scores have to say about learning Java with us.</p></div>
     <div class="tw" id="tw"></div>
-    <p class="sample">Sample testimonials shown for layout. Replace with real student names, cities, photos and scores.</p>
   </div>
 </section>
 
@@ -468,13 +478,11 @@ document.getElementById("deck").innerHTML=D.map(d=>`<a class="mc" href="#curricu
 document.getElementById("lessons").innerHTML=D.slice(1).map(([n,i,t,s,a,c])=>`<div class="lr rv" style="${s}"><span class="dx d1"></span><span class="dx d2"></span><span class="no">${ic(i)}${n}</span><b>${t}</b>${c?`<code class="snip">${c}</code>`:""}<svg class="la" viewBox="0 0 140 96" aria-hidden="true">${ART[a]}</svg></div>`).join("");
 const P=[["I","Introduction to Object Oriented Programming Concepts"],["II","Elementary Concept of Objects and Classes"],["III","Values and Data Types"],["IV","Operators in Java"],["V(a)","Introduction to Java"],["V(b)","Input in Java"],["VI","Mathematical Library Methods"],["VII","Conditional Statements in Java"],["VIII","Iterative Constructs in Java"],["IX","Nested Loops"]];
 document.getElementById("rev").innerHTML=`<div class="ra"><svg viewBox="0 0 140 96" aria-hidden="true">${ART.note}</svg></div><div><span class="no">${ic("notebook-pen")}01</span><h3>Revision of Class IX Syllabus</h3><ul class="parts">${P.map(([r,t])=>`<li><em>Part ${r}</em>${t}</li>`).join("")}</ul></div>`;
-/* SAMPLE testimonials: replace with real data */
-const T=[["Aarav S.","Hyderabad","98","Loops and arrays finally clicked. The doubt-clearing at the end of every class made all the difference.","#12b76a,#0a8f52"],
-["Ananya R.","Bengaluru","96","Starting in Class IX meant Class X topics felt like a natural next step instead of a rush.","#ff7a2f,#e5531b"],
-["Kabir M.","Chennai","95","Small batch, full attention. I could ask anything without feeling shy.","#3b82f6,#1d4ed8"],
-["Diya P.","Pune","97","The assignments after every class kept me practising, and I walked into the exam confident.","#ec4899,#be185d"],
-["Rohan T.","Mumbai","94","Strings and constructors were my weak spots. Now they are my favourite part of Java.","#8b5cf6,#6d28d9"]];
-document.getElementById("tw").innerHTML=T.map(([n,c,s,q,g])=>`<article class="t rv"><div class="av" style="background:linear-gradient(135deg,${g})">${n[0]}</div><div class="sc"><b>${s}</b><small>/100</small></div><h4>${n}</h4><p class="m">Class X · ${c}</p><blockquote>“${q}”</blockquote></article>`).join("");
+/* Student testimonials */
+const T=[{"n": "Yaksh Bhatia", "s": "98", "img": "https://ik.imagekit.io/z0bchzlzj/Yaksh%20Bhatia.jpg?updatedAt=1795256384484", "q": "Sir helped me a lot to get my grades up. Whatever concept he taught, he would always try to give examples to help us understand better, which actually worked. He always motivates us to do our best and would always help if I had any doubts.", "sc": "Universal High School, Dahisar"}, {"n": "Daksh Tater", "s": "90", "img": "https://ik.imagekit.io/z0bchzlzj/Daksh%20Tater.jpg?updatedAt=1795256414526", "q": "It’s a very interactive class with very creative methods of teaching, like weekend competitions, friendly coding competitions and much more. Ujwal Sir has greatly enhanced my skills in Java and I am very lucky to have a teacher like him!", "sc": "Universal High School"}, {"n": "Atharva Devar", "s": "95", "img": "https://ik.imagekit.io/z0bchzlzj/Atharva.jpg", "q": "Earlier, I struggled with Java programming, especially understanding syntax, writing code and building logic. I often needed help to complete programs. After attending the classes, I have improved my coding skills and problem-solving abilities. The practical sessions and regular practice helped me understand concepts better. Now, I feel more confident and can write programs more independently. Overall, these classes have helped me learn and improve a lot.", "sc": "Universal High School, Dahisar"}, {"n": "Viraj Shrivastav", "s": "96", "img": "https://ik.imagekit.io/z0bchzlzj/Viraj.JPG?updatedAt=1795256399773", "q": "I used to face confusion on how to approach the subject a day before the exams, and I also used to get confused on the fundamentals and theory area of the subject, which used to cost me those 5–10 marks. Since I joined, my overall confidence in my grasp of the theory of the subject has increased drastically.", "sc": "Universal High School, Dahisar"}, {"n": "Kavish Sonthalia", "s": "81", "img": "https://ik.imagekit.io/z0bchzlzj/Kavish?updatedAt=1795256329525", "q": "I always felt that I was lacking somewhere, but I didn’t know where. When I joined the classes, Sir conducted a test and highlighted the points I needed to focus on, which for me was theory. Sir also gave me learning resources to go through. Earlier I used to go through the textbook, which was time-consuming, but now I just go through the resources and that is enough for me, as Sir gave me all the important stuff on a silver plate to learn.", "sc": "Universal High School, Dahisar"}, {"n": "Naitik Barot", "s": "78", "img": "https://ik.imagekit.io/z0bchzlzj/Naitik", "q": "The classes helped me overcome my doubts and made computer and Java easy for me. Now I am able to solve programs easily, and theory has also become easy for me.", "sc": "Universal High School"}];
+const G=["#12b76a,#0a8f52","#ff7a2f,#e5531b","#3b82f6,#1d4ed8","#ec4899,#be185d","#8b5cf6,#6d28d9","#14b8b8,#0d8f8f"];
+document.getElementById("tw").innerHTML=T.map((d,i)=>`<article class="t rv"><div class="av" style="background:linear-gradient(135deg,${G[i%G.length]})"><span>${d.n[0]}</span>${d.img?`<img src="${d.img}" alt="${d.n}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:""}</div><div class="sc"><b>${d.s}</b><small>/100</small></div><h4>${d.n}</h4><p class="m">${d.sc}<br>Class X · Mumbai</p><blockquote class="q${d.q.length>230?" clamp":""}">“${d.q}”</blockquote>${d.q.length>230?'<button class="more" type="button" aria-expanded="false">Read more</button>':""}</article>`).join("");
+document.getElementById("tw").addEventListener("click",e=>{const b=e.target.closest(".more");if(!b)return;const q=b.previousElementSibling,open=!q.classList.toggle("clamp");b.textContent=open?"Show less":"Read more";b.setAttribute("aria-expanded",open)});
 /* Motion: reveals */
 try{
  if(!window.Motion)throw 0;
